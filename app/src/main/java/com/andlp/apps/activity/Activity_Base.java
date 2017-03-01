@@ -20,10 +20,11 @@ public class Activity_Base extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        hidTitlebar();
         super.onCreate(savedInstanceState);
         x.view().inject(this);
         App.addActivity(this);
-        hidTitlebar();
+
     }
 
    private void hidTitlebar(){

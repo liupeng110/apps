@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.Activity_Main"> </activity>
+        <activity android:name=".activity.Activity_About"> </activity>
+        <activity android:name=".activity.Activity_DownList"> </activity>
+        <activity android:name=".activity.Activity_Setting"> </activity>
+
     </application>
 
 </manifest>
