@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\videos\xiaoyoux\xiaoyouxi0\comandliblp\src\main\assets"/><source path="D:\videos\xiaoyoux\xiaoyouxi0\comandliblp\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\videos\xiaoyoux\xiaoyouxi0\comandliblp\src\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="G:\anzhuang\studio\example\apps\andlib\src\main\assets"/><source path="G:\anzhuang\studio\example\apps\andlib\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="G:\anzhuang\studio\example\apps\andlib\src\debug\assets"/></dataSet></merger>
