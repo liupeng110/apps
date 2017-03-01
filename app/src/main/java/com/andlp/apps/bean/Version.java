@@ -7,7 +7,7 @@ import org.xutils.db.annotation.Table;
 @Table(name="Version")
 public class Version {
 
-    @Column(name="vercode") private String vercode;//依据
+    @Column(name="vercode",isId = true) private String vercode ="0";//依据
     @Column(name="vername") private String vername;//显示
     @Column(name="txt") private String txt;  //文本(尽量不要太长)
     @Column(name="way")private String way;  //0正常(只提示),1.强制更新(wifi)2.强制更新(wifi+3/4g)
