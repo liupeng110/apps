@@ -52,6 +52,7 @@ public class Activity_Welcome extends Activity_Base {
                    }catch(Throwable t){ t.printStackTrace();
                        result = "网络请求异常,请检查网络,或权限并重试!";
                        L.i("版本-->"+result);
+                       toMain();//进行跳转
                    }
 
 
