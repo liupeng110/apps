@@ -5,7 +5,7 @@ package com.andlp.apps;
  */
 
 public class plan {
-    //7niu 分类(2.0考虑分页)
+    //7niu 分类()
     //1.开发(常用)工具类
     //2.常用必备
     //3.精简类app-->qqlite
@@ -22,5 +22,11 @@ public class plan {
     //3.反馈?
     //4.
 
+    //----2.0
+    //分页
+    //搜索
+    //我
+    //反馈
+    //
 
 }

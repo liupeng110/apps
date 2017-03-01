@@ -1,9 +1,7 @@
 package com.andlp.apps.activity;
 
 import android.os.Bundle;
-
 import com.andlp.apps.R;
-
 import org.xutils.view.annotation.ContentView;
 
 /**
