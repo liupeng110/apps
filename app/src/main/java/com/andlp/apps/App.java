@@ -6,6 +6,11 @@ import com.andlib.lp.AndApp;
  */
 public class App extends AndApp {
 
+    @Override  public void onCreate() {
+        super.onCreate();
+
+
+    }
 
 
 

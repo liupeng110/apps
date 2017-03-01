@@ -33,8 +33,9 @@ import java.util.List;
  */
 public class AndApp extends Application {
 
-    private List<Activity> activityList = new LinkedList<Activity>();
+    private static List<Activity> activityList = new LinkedList<Activity>();
     public static DbManager.DaoConfig daoConfig;// xutils数据库配置
+    public static DbManager db;
     public boolean isCash = true;//是否开启崩溃日志捕捉. true开启 . false关闭
 
     @Override
@@ -59,14 +60,14 @@ public class AndApp extends Application {
     /**
      * 添加Activity到容器中,统一退出
      */
-    public void addActivity(Activity activity) {
+    public static void addActivity(Activity activity) {
         activityList.add(activity);
     }
 
     /***
      * 退出应用,遍历所有Activity并finish,结束自身
      */
-    public void exit() {
+    public static void exit() {
         for (Activity activity : activityList) {
             activity.finish();
         }
@@ -101,6 +102,8 @@ public class AndApp extends Application {
                     }
                 });
 
+        initImageLoader(this);
+
     }
 
     /*******
@@ -128,6 +131,7 @@ public class AndApp extends Application {
                 .tasksProcessingOrder(QueueProcessingType.LIFO))
                 .defaultDisplayImageOptions(options).build();
         imageLoader.getInstance().init(config);
+        db = x.getDb(daoConfig);
         return imageLoader;
     }
 
