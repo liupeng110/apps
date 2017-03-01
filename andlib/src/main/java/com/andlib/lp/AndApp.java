@@ -42,7 +42,7 @@ public class AndApp extends Application {
     public void onCreate() {
         super.onCreate();
         L.i("进入应用切入点....");
-        x.Ext.init(this); // 初始化xutils3
+        x.Ext.init(this);     // 初始化xutils3
         x.Ext.setDebug(true); // 输出debug日志
 
         if (isCash) {// 进行捕捉崩溃日志
@@ -50,11 +50,6 @@ public class AndApp extends Application {
             crashHandler.init(getApplicationContext());
         }
         initDatabase();// 进行配置数据库
-//        try {
-//            initImageLoader(x.app().getApplicationContext());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     /**
@@ -79,7 +74,6 @@ public class AndApp extends Application {
      * 配置数据库
      */
     public void initDatabase() {
-
         daoConfig = new DbManager.DaoConfig()
                 .setDbName("andlp.db")
                 // 不设置dbDir时, 默认存储在app的私有目录.
