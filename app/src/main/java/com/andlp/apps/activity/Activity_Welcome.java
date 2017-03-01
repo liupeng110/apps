@@ -34,13 +34,12 @@ public class Activity_Welcome extends Activity_Base {
 
     private void getVersion(){
 
-           x.task().post(new Runnable() {
+           x.task().run(new Runnable() {
                @Override
                public void run() {
                    String result="";
                    Version version =null;
-                   RequestParams params = new  RequestParams(Constant.Server+Constant.update);
-
+                   RequestParams params = new  RequestParams(Constant.update+Constant.now);
                    try{
                        result=x.http().getSync(params,String.class);
                        version= JsonUtil.parse(result, Version.class);

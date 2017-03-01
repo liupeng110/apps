@@ -9,8 +9,9 @@ public class Constant {
 
     public static String Server = "http://7xnnew.com1.z0.glb.clouddn.com/";
     public static String welcome= "welcome.jpg";
-    public static String update = "update.txt";
+    public static String update = Server+"update.txt";
     public static String SDcard = App.SDcard;
+    public static String now ="?v=23333";
 
 
 }
