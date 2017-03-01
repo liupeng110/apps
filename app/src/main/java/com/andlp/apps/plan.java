@@ -5,8 +5,10 @@ package com.andlp.apps;
  */
 
 public class plan {
-    //7niu
-    //
-    //
+    //7niu 模块划分
+    //1.开发工具
+    //2.常用必备
+    //3.精简类
+    //4.
 
 }
