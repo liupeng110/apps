@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.andlp.apps.App;
+import com.andlp.apps.MyApp;
 
 import org.xutils.x;
 
@@ -23,7 +23,7 @@ public class Activity_Base extends Activity {
         hidTitlebar();
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        App.addActivity(this);
+        MyApp.addActivity(this);
 
     }
 

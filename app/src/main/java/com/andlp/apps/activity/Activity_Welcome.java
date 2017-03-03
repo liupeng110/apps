@@ -6,13 +6,12 @@ import android.widget.ImageView;
 
 import com.andlib.lp.util.JsonUtil;
 import com.andlib.lp.util.L;
-import com.andlp.apps.App;
+import com.andlp.apps.MyApp;
 import com.andlp.apps.R;
 import com.andlp.apps.bean.Version;
 import com.andlp.apps.config.Constant;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import org.json.JSONObject;
 import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -47,7 +46,7 @@ public class Activity_Welcome extends Activity_Base {
                        L.i("版本-->"+version.getTxt());
                        L.i("版本-->"+version.getVercode());
                        L.i("版本-->"+version.getVername());
-                       App.db.saveOrUpdate(version);//保存最新版本号
+                       MyApp.db.saveOrUpdate(version);//保存最新版本号
                    }catch(Throwable t){ t.printStackTrace();
                        result = "网络请求异常,请检查网络,或权限并重试!";
                    }
