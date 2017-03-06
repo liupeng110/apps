@@ -1,7 +1,6 @@
 package com.andlp.apps.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -18,9 +17,7 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-/**
- * 717219917@qq.com  2017/3/1 16:01
- */
+/** 717219917@qq.com  2017/3/1 16:01 */
 @ContentView(R.layout.activity_welcome)
 public class Activity_Welcome extends Activity_Base {
 
@@ -31,11 +28,6 @@ public class Activity_Welcome extends Activity_Base {
         getVersion();
     }
 
-
-    private void getBmpFile(){
-
-
-    }
     private void getVersion(){
            x.task().run(new Runnable() {
                @Override
@@ -45,14 +37,14 @@ public class Activity_Welcome extends Activity_Base {
                    RequestParams params = new  RequestParams(Constant.update+Constant.now);
                    try{
                        result=x.http().getSync(params,String.class);
-                       version= JsonUtil.parse(result, Version.class);
+                       version= JsonUtil.parse(result,Version.class);
                        L.i("version-->"+version.getWay());
                        L.i("version-->"+version.getTxt());
                        L.i("version-->"+version.getVercode());
                        L.i("version-->"+version.getVername());
                        MyApp.db.saveOrUpdate(version);//保存最新版本号
                    }catch(Throwable t){ t.printStackTrace();
-                       result = "request err!";
+                       result = "request error!";
                    }
                    L.i("version-->"+result);
                    toMain(); //进行跳转
