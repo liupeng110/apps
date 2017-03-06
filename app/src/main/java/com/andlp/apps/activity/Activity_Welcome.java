@@ -1,6 +1,7 @@
 package com.andlp.apps.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -26,12 +27,15 @@ public class Activity_Welcome extends Activity_Base {
    @ViewInject(R.id.welcome_background) private ImageView welcome_background ;
    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageLoader.getInstance().displayImage(Constant.Server+Constant.welcome,welcome_background);
-       getVersion();
+        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
+        getVersion();
     }
 
 
+    private void getBmpFile(){
 
+
+    }
     private void getVersion(){
            x.task().run(new Runnable() {
                @Override
@@ -56,9 +60,7 @@ public class Activity_Welcome extends Activity_Base {
                }
            });
 
-    }
-
-
+    } //
     private void toMain(){
         x.task().postDelayed(new Runnable() {
             @Override public void run() {
@@ -67,7 +69,7 @@ public class Activity_Welcome extends Activity_Base {
                 Activity_Welcome.this.finish();
             }
         }, 3000);
-    }//延迟
+    }    //延迟
 
 
 
