@@ -42,15 +42,15 @@ public class Activity_Welcome extends Activity_Base {
                    try{
                        result=x.http().getSync(params,String.class);
                        version= JsonUtil.parse(result, Version.class);
-                       L.i("版本-->"+version.getWay());
-                       L.i("版本-->"+version.getTxt());
-                       L.i("版本-->"+version.getVercode());
-                       L.i("版本-->"+version.getVername());
+                       L.i("version-->"+version.getWay());
+                       L.i("version-->"+version.getTxt());
+                       L.i("version-->"+version.getVercode());
+                       L.i("version-->"+version.getVername());
                        MyApp.db.saveOrUpdate(version);//保存最新版本号
                    }catch(Throwable t){ t.printStackTrace();
-                       result = "网络请求异常,请检查网络,或权限并重试!";
+                       result = "request err!";
                    }
-                   L.i("版本-->"+result);
+                   L.i("version-->"+result);
                    toMain(); //进行跳转
 
                }
@@ -67,7 +67,7 @@ public class Activity_Welcome extends Activity_Base {
                 Activity_Welcome.this.finish();
             }
         }, 3000);
-    }//延迟跳转
+    }//延迟
 
 
 
