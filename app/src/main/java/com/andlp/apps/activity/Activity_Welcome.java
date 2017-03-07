@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.andlib.lp.util.AppUtil;
 import com.andlib.lp.util.JsonUtil;
 import com.andlib.lp.util.L;
 import com.andlp.apps.MyApp;
@@ -17,48 +18,64 @@ import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-/**
- * 717219917@qq.com  2017/3/1 16:01
- */
+/** 717219917@qq.com  2017/3/1 16:01 */
 @ContentView(R.layout.activity_welcome)
 public class Activity_Welcome extends Activity_Base {
+    @ViewInject(R.id.welcome_background) private ImageView welcome_background ;
 
-   @ViewInject(R.id.welcome_background) private ImageView welcome_background ;
-   @Override protected void onCreate(Bundle savedInstanceState) {
+    Version version =null;
+    String  result="";
+    int newVersion =0,oldVersion =0;
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageLoader.getInstance().displayImage(Constant.Server+Constant.welcome,welcome_background);
-       getVersion();
+        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
+        getVersion();
     }
-
-
-
+    //1.
     private void getVersion(){
-           x.task().run(new Runnable() {
-               @Override
-               public void run() {
-                   String result="";
-                   Version version =null;
-                   RequestParams params = new  RequestParams(Constant.update+Constant.now);
-                   try{
-                       result=x.http().getSync(params,String.class);
-                       version= JsonUtil.parse(result, Version.class);
-                       L.i("版本-->"+version.getWay());
-                       L.i("版本-->"+version.getTxt());
-                       L.i("版本-->"+version.getVercode());
-                       L.i("版本-->"+version.getVername());
-                       MyApp.db.saveOrUpdate(version);//保存最新版本号
-                   }catch(Throwable t){ t.printStackTrace();
-                       result = "网络请求异常,请检查网络,或权限并重试!";
-                   }
-                   L.i("版本-->"+result);
-//                   toMain(); //进行跳转
-
-               }
-           });
+        x.task().run(new Runnable() {
+            @Override public void run() {
+                RequestParams params = new  RequestParams(Constant.update+Constant.now);
+                try{
+                    result=x.http().getSync(params,String.class);
+                    version= JsonUtil.parse(result,Version.class);
+                    L.i("version-->"+version.getWay());
+                    L.i("version-->"+version.getTxt());
+                    L.i("version-->"+version.getVercode());
+                    L.i("version-->"+version.getVername());
+                    MyApp.db.saveOrUpdate(version);//save version
+                }catch(Throwable t){ t.printStackTrace();
+                    result = "request error!";
+                }
+                L.i("version--> reque result:"+result);
+                compareVersion();
+            }
+        });
 
     }
-
-
+    //2.
+    private void compareVersion(){
+        x.task().run(new Runnable() {
+            @Override public void run() {
+                try{
+                    Version db_Version = MyApp.db.selector(Version.class).findFirst();
+                    newVersion =Integer.parseInt(db_Version.getVercode());
+                    oldVersion = AppUtil.getVersionCode(Activity_Welcome.this);
+                    if (newVersion>oldVersion){
+                        L.i("version----need update->new:"+newVersion+",old:"+oldVersion);
+                    }else{
+                        L.i("version----No need update->new:"+newVersion+",old:"+oldVersion);
+                    }
+                }catch(Throwable t){
+                    t.printStackTrace();
+                }
+                L.i("version----Last>new:"+newVersion+",old:"+oldVersion);
+                toMain(); //进行跳转
+            }
+        });
+    }
+    //3.
     private void toMain(){
         x.task().postDelayed(new Runnable() {
             @Override public void run() {
@@ -67,7 +84,7 @@ public class Activity_Welcome extends Activity_Base {
                 Activity_Welcome.this.finish();
             }
         }, 3000);
-    }//延迟跳转
+    }
 
 
 
