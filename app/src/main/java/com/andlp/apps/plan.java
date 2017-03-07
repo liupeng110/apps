@@ -25,4 +25,11 @@ public class plan {
     //我
     //反馈
 
+    //分类  fenlei.txt    /br换行,扩展多个分类
+    //子类   开发工具.txt   常用.txt    精简.txt  创意.txt
+    //re(.apk),icon(.png),txt,txt /br      直接一个list,单item为 Icon+Txt+Txt+Button
+    //
+
+
+
 }

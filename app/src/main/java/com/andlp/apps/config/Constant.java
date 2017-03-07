@@ -12,6 +12,6 @@ public class Constant {
     public static String update = Server+"update.txt";
     public static String SDcard = MyApp.SDcard;
     public static String now ="?v=23333";
-
+    public static String test = Server+"开发工具.txt";
 
 }

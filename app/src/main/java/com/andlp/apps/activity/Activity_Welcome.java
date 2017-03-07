@@ -36,15 +36,17 @@ public class Activity_Welcome extends Activity_Base {
     private void getVersion(){
         x.task().run(new Runnable() {
             @Override public void run() {
+//                RequestParams params = new  RequestParams(Constant.update+Constant.now);
                 RequestParams params = new  RequestParams(Constant.update+Constant.now);
+
                 try{
                     result=x.http().getSync(params,String.class);
-                    version= JsonUtil.parse(result,Version.class);
-                    L.i("version-->"+version.getWay());
-                    L.i("version-->"+version.getTxt());
-                    L.i("version-->"+version.getVercode());
-                    L.i("version-->"+version.getVername());
-                    MyApp.db.saveOrUpdate(version);//save version
+//                    version= JsonUtil.parse(result,Version.class);
+//                    L.i("version-->"+version.getWay());
+//                    L.i("version-->"+version.getTxt());
+//                    L.i("version-->"+version.getVercode());
+//                    L.i("version-->"+version.getVername());
+//                    MyApp.db.saveOrUpdate(version);//save version
                 }catch(Throwable t){ t.printStackTrace();
                     result = "request error!";
                 }
