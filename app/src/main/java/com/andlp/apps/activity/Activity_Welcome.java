@@ -37,7 +37,7 @@ public class Activity_Welcome extends Activity_Base {
         x.task().run(new Runnable() {
             @Override public void run() {
 //                RequestParams params = new  RequestParams(Constant.update+Constant.now);
-                RequestParams params = new  RequestParams(Constant.update+Constant.now);
+                RequestParams params = new  RequestParams(Constant.test+Constant.now);
 
                 try{
                     result=x.http().getSync(params,String.class);
