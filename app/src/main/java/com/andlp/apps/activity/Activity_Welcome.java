@@ -47,6 +47,10 @@ public class Activity_Welcome extends Activity_Base {
 //                    L.i("version-->"+version.getVercode());
 //                    L.i("version-->"+version.getVername());
 //                    MyApp.db.saveOrUpdate(version);//save version
+                    String[] listArray = result.split("\n");//
+                    for (int i = 0; i < listArray.length; i++) {
+                        L.i(i + "line:" + listArray[i]);
+                    }
                 }catch(Throwable t){ t.printStackTrace();
                     result = "request error!";
                 }
