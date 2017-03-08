@@ -13,5 +13,6 @@ public class Constant {
     public static String welcome= "welcome.jpg";
     public static String update = Server+"update.txt"+now;
     public static String test = Server+"分类.txt"+now;
+    public static String kaifa = Server+"开发.txt"+now;
 
 }

@@ -41,12 +41,12 @@ public class Activity_Main extends Activity_Base {
                     SPUtil.put(Activity_Main.this,"size",listArray.length);
                     for (int i = 0; i < listArray.length; i++) {
                         L.i(tag+i+"line:" + listArray[i]);
+                        getCategory_2(listArray[i]);
                         SPUtil.put(Activity_Main.this,i+"",listArray[i]);//save &read  Decoupling
                     }
                 } catch(Throwable t) {
                     t.printStackTrace(); result = "request error!";
                 }
-                testCategory();
                 L.i(tag+"reque result:"+result);
             }
         });

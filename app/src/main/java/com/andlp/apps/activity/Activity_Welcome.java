@@ -36,7 +36,8 @@ public class Activity_Welcome extends Activity_Base {
     private void getVersion(){
         x.task().run(new Runnable() {
             @Override public void run() {
-                RequestParams params = new  RequestParams(Constant.update); 
+//                RequestParams params = new  RequestParams(Constant.update);
+                RequestParams params = new  RequestParams(Constant.kaifa);
                 try{
                     result=x.http().getSync(params,String.class);
                     version= JsonUtil.parse(result,Version.class);
