@@ -34,14 +34,17 @@ public class Activity_Main extends Activity_Base {
             @Override public void run() {
                 String result ="";
                 RequestParams params = new  RequestParams(Constant.test);
-                try{
+              try{
                     result=x.http().getSync(params,String.class);
                     String[] listArray = result.split("\n");
-                    for (int i = 0; i < listArray.length; i++) {
+                    for (int i = 0; i < listArray.length; i++)
+                    {
                         L.i(tag+i+"line:" + listArray[i]);
                     }
-                }catch(Throwable t){ t.printStackTrace();
-                    result = "request error!";
+                }
+                catch(Throwable t)
+                {
+                    t.printStackTrace(); result = "request error!";
                 }
                 L.i(tag+"reque result:"+result);
             }
@@ -56,13 +59,16 @@ public class Activity_Main extends Activity_Base {
                 try{
                     result=x.http().getSync(params,String.class);
                     String[] listArray = result.split("\n");
-                    for (int i = 0; i < listArray.length; i++) {
+                    for (int i = 0; i < listArray.length; i++)
+                    {
                         L.i(tag+i+"line:" + listArray[i]);
                     }
-                }catch(Throwable t){ t.printStackTrace();
-                    result = "request error!";
                 }
-                L.i(tag+"reque result:"+result);
+                catch(Throwable t)
+                {
+                    t.printStackTrace();result = "request error!";
+                }
+                L.i(tag+"request result:"+result);
             }
         });
     }
