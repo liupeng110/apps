@@ -1,6 +1,7 @@
 package com.andlp.apps.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,7 +41,13 @@ public class Activity_Base extends Activity {
            window.setStatusBarColor(Color.TRANSPARENT);
            window.setNavigationBarColor(Color.TRANSPARENT);
        }
-
    }
+
+    private void start(Activity activity){
+        Intent intent2=new  Intent();
+        intent2.setClassName(this,activity.getLocalClassName());
+        startActivity(intent2);
+    }
+
 
 }

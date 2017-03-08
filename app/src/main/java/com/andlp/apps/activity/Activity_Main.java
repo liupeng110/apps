@@ -3,6 +3,7 @@ package com.andlp.apps.activity;
 import android.os.Bundle;
 
 import com.andlib.lp.util.L;
+import com.andlib.lp.util.SPUtil;
 import com.andlp.apps.R;
 import com.andlp.apps.config.Constant;
 
@@ -34,18 +35,18 @@ public class Activity_Main extends Activity_Base {
             @Override public void run() {
                 String result ="";
                 RequestParams params = new  RequestParams(Constant.test);
-              try{
+               try{
                     result=x.http().getSync(params,String.class);
                     String[] listArray = result.split("\n");
-                    for (int i = 0; i < listArray.length; i++)
-                    {
+                    SPUtil.put(Activity_Main.this,"size",listArray.length);
+                    for (int i = 0; i < listArray.length; i++) {
                         L.i(tag+i+"line:" + listArray[i]);
+                        SPUtil.put(Activity_Main.this,i+"",listArray[i]);//save &read  Decoupling
                     }
-                }
-                catch(Throwable t)
-                {
+                } catch(Throwable t) {
                     t.printStackTrace(); result = "request error!";
                 }
+                testCategory();
                 L.i(tag+"reque result:"+result);
             }
         });
@@ -61,17 +62,23 @@ public class Activity_Main extends Activity_Base {
                     String[] listArray = result.split("\n");
                     for (int i = 0; i < listArray.length; i++)
                     {
-                        L.i(tag+i+"line:" + listArray[i]);
+                        L.i(tag+i+"getCategory_2:" + listArray[i]);
                     }
+                } catch(Throwable t) {
+                    t.printStackTrace();result = "getCategory_2 request error!";
                 }
-                catch(Throwable t)
-                {
-                    t.printStackTrace();result = "request error!";
-                }
-                L.i(tag+"request result:"+result);
+                L.i(tag+"getCategory_2 result:"+result);
             }
         });
     }
-
+    //
+    private void testCategory(){
+        int size = (int)SPUtil.get(this,"size",0);
+        for(int a=0;a<size;a++){
+            String result=(String)SPUtil.get(this,a+"","");
+            L.i(tag+a+"spu:" + result);
+            getCategory_2(result);
+        }
+    }
 
 }

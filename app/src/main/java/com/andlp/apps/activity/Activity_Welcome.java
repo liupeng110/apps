@@ -24,31 +24,26 @@ public class Activity_Welcome extends Activity_Base {
     @ViewInject(R.id.welcome_background) private ImageView welcome_background ;
 
     Version version =null;
-    String  result="";
+    String  result="",tag="Activity_Welcome";
     int newVersion =0,oldVersion =0;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
+//        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
         getVersion();
     }
     //1.
     private void getVersion(){
         x.task().run(new Runnable() {
             @Override public void run() {
-                RequestParams params = new  RequestParams(Constant.test+Constant.now);
+                RequestParams params = new  RequestParams(Constant.update);
                 try{
                     result=x.http().getSync(params,String.class);
                     version= JsonUtil.parse(result,Version.class);
-                    L.i("version-->"+version.getWay());
-                    L.i("version-->"+version.getTxt());
-                    L.i("version-->"+version.getVercode());
-                    L.i("version-->"+version.getVername());
                     MyApp.db.saveOrUpdate(version);//save version
-                }catch(Throwable t){ t.printStackTrace();
-                    result = "request error!";
+                }catch(Throwable t){
+                    t.printStackTrace();
                 }
-                L.i("version--> reque result:"+result);
                 compareVersion();
             }
         });
@@ -62,16 +57,11 @@ public class Activity_Welcome extends Activity_Base {
                     Version db_Version = MyApp.db.selector(Version.class).findFirst();
                     newVersion =Integer.parseInt(db_Version.getVercode());
                     oldVersion = AppUtil.getVersionCode(Activity_Welcome.this);
-                    if (newVersion>oldVersion){
-                        L.i("version----need update->new:"+newVersion+",old:"+oldVersion);
-                    }else{
-                        L.i("version----No need update->new:"+newVersion+",old:"+oldVersion);
-                    }
+                    if (newVersion>oldVersion){  update(); return;}
                 }catch(Throwable t){
                     t.printStackTrace();
                 }
-                L.i("version----Last>new:"+newVersion+",old:"+oldVersion);
-                toMain(); //进行跳转
+                toMain(); //直接延迟
             }
         });
     }
@@ -83,9 +73,12 @@ public class Activity_Welcome extends Activity_Base {
                 startActivity(intent);
                 Activity_Welcome.this.finish();
             }
-        }, 3000);
+        }, 2000);
     }
 
-
+    private void update (){
+        L.i(tag+"update->new:"+newVersion+",old:"+oldVersion);
+        toMain();
+    }
 
 }

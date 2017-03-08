@@ -1,5 +1,7 @@
 package com.andlp.apps;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Environment;
 
 import com.andlib.lp.AndApp;
