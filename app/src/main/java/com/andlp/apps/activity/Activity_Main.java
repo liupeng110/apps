@@ -13,7 +13,7 @@ import org.xutils.x;
 
 @ContentView(R.layout.activity_main)
 public class Activity_Main extends Activity_Base {
-             String tag ="Activity_Main--";
+             String tag ="Activity_Main";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
