@@ -29,28 +29,31 @@ public class Activity_Welcome extends Activity_Base {
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
+    }
+
+    @Override  protected void onResume() {
+        super.onResume();
+        ImageLoader.getInstance().displayImage("assets://"+Constant.welcome,welcome_background);
         getVersion();
     }
-    //1.
+
+    //1.获取版本号
     private void getVersion(){
         x.task().run(new Runnable() {
             @Override public void run() {
-//                RequestParams params = new  RequestParams(Constant.update);
-                RequestParams params = new  RequestParams(Constant.kaifa);
+                RequestParams params = new  RequestParams(Constant.update);
                 try{
                     result=x.http().getSync(params,String.class);
                     version= JsonUtil.parse(result,Version.class);
                     MyApp.db.saveOrUpdate(version);//save version
-                }catch(Throwable t){
-                    t.printStackTrace();
-                }
+                }catch(Throwable t){ t.printStackTrace(); }
+
                 compareVersion();
             }
         });
 
     }
-    //2.
+    //2.进行比较
     private void compareVersion(){
         x.task().run(new Runnable() {
             @Override public void run() {
@@ -59,14 +62,12 @@ public class Activity_Welcome extends Activity_Base {
                     newVersion =Integer.parseInt(db_Version.getVercode());
                     oldVersion = AppUtil.getVersionCode(Activity_Welcome.this);
                     if (newVersion>oldVersion){  update(); return;}
-                }catch(Throwable t){
-                    t.printStackTrace();
-                }
-                toMain(); //直接延迟
+                }catch(Throwable t){ t.printStackTrace(); }
+                toMain();
             }
         });
     }
-    //3.
+    //3.延迟跳转主界面
     private void toMain(){
         x.task().postDelayed(new Runnable() {
             @Override public void run() {
@@ -78,7 +79,7 @@ public class Activity_Welcome extends Activity_Base {
     }
 
     private void update (){
-        L.i(tag+"update->new:"+newVersion+",old:"+oldVersion);
+        L.i(tag+"需要更新update->new:"+newVersion+",old:"+oldVersion);
         toMain();
     }
 

@@ -12,7 +12,11 @@ public class Constant {
     public static String SDcard = MyApp.SDcard;
     public static String welcome= "welcome.jpg";
     public static String update = Server+"update.txt"+now;
-    public static String test = Server+"分类.txt"+now;
-    public static String kaifa = Server+"开发.txt"+now;
+    public static String fenlei = Server+"分类.txt"+now;
+    public static String kf = Server+"kf.txt"+now;//开发
+    public static String jj = Server+"jj.txt"+now;//精简
+    public static String ci = Server+"ci.txt"+now;//创意
+    public static String cy = Server+"cy.txt"+now;//常用
+
 
 }

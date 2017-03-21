@@ -1,5 +1,13 @@
 package com.andlp.apps;
 
+import com.andlib.lp.util.L;
+import com.andlib.lp.util.SPUtil;
+import com.andlp.apps.activity.Activity_Main;
+import com.andlp.apps.config.Constant;
+
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
 /**  717219917@qq.com  2017/3/1 15:35 */
 public class plan {
     //7niu 分类()
@@ -21,10 +29,52 @@ public class plan {
     //反馈
 
     //分类  分类.txt    /br换行,扩展多个分类
-    //子类   开发.txt   常用.txt    精简.txt  创意.txt
+    //子类   开发.txt(kf)   常用.txt(cy)    精简.txt(jj)  创意.txt(cy)
     //re(.apk),icon(.png),txt,txt /br      直接一个list,单item为 Icon+Txt+Txt+Button
     //
 
+    //3.category动态获取分类
+//    private void getCategory(){
+//        x.task().run(new Runnable() {
+//            @Override public void run() {
+//                String result ="";
+//                RequestParams params = new  RequestParams(Constant.fenlei);
+//                try{
+//                    result=x.http().getSync(params,String.class);
+//                    String[] listArray = result.split("\n");
+//                    SPUtil.put(Activity_Main.this,"size",listArray.length);
+//                    for (int i = 0; i < listArray.length; i++) {
+//                        L.i(tag+i+"line:" + listArray[i]);
+//                        getCategory_2(listArray[i]);
+//                        SPUtil.put(Activity_Main.this,i+"",listArray[i]);//save &read  Decoupling
+//                    }
+//                } catch(Throwable t) {
+//                    t.printStackTrace(); result = "request error!";
+//                }
+//                L.i(tag+"reque result:"+result);
+//            }
+//        });
+//    }
+//    //4.category detail
+//    private void getCategory_2(final String name){
+//        x.task().run(new Runnable() {
+//            @Override public void run() {
+//                String result ="";
+//                RequestParams params = new  RequestParams(Constant.Server+name+Constant.now);
+//                try{
+//                    result=x.http().getSync(params,String.class);
+//                    String[] listArray = result.split("\n");
+//                    for (int i = 0; i < listArray.length; i++)
+//                    {
+//                        L.i(tag+i+"getCategory_2:" + listArray[i]);
+//                    }
+//                } catch(Throwable t) {
+//                    t.printStackTrace();result = "getCategory_2 request error!";
+//                }
+//                L.i(tag+"getCategory_2 result:"+result);
+//            }
+//        });
+//    }
 
 
 }
