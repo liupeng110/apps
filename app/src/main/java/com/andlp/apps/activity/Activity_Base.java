@@ -18,7 +18,7 @@ import org.xutils.x;
  */
 
 public class Activity_Base extends Activity {
-
+    String tag ="Activity_Base";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         hidTitlebar();

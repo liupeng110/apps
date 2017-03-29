@@ -3,7 +3,7 @@
         
     </style><string name="action_settings">Settings</string><dimen name="activity_horizontal_margin">16dp</dimen><string name="app_name">com.andlib.lp</string><style name="AppBaseTheme" parent="android:Theme.Light.WallpaperSettings">
         
-    </style></file><file path="F:\work\apps\apps\andlib\build\intermediates\bundles\debug\res\values-sw720dp-land-v13\values-sw720dp-land-v13.xml" qualifiers="sw720dp-land-v13"><dimen name="activity_horizontal_margin">128dp</dimen></file><file path="F:\work\apps\apps\andlib\build\intermediates\bundles\debug\res\values-v11\values-v11.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+    </style><string name="btn_down">下载</string></file><file path="F:\work\apps\apps\andlib\build\intermediates\bundles\debug\res\values-sw720dp-land-v13\values-sw720dp-land-v13.xml" qualifiers="sw720dp-land-v13"><dimen name="activity_horizontal_margin">128dp</dimen></file><file path="F:\work\apps\apps\andlib\build\intermediates\bundles\debug\res\values-v11\values-v11.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
         
     </style></file><file path="F:\work\apps\apps\andlib\build\intermediates\bundles\debug\res\values-v14\values-v14.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         

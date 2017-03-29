@@ -11,14 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 57,
-                        "endOffset": 108
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -30,14 +23,7 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 113,
-                        "endColumn": 55,
-                        "endOffset": 164
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -49,14 +35,7 @@
                     "endOffset": 217
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 169,
-                        "endColumn": 52,
-                        "endOffset": 217
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -68,14 +47,7 @@
                     "endOffset": 268
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 222,
-                        "endColumn": 50,
-                        "endOffset": 268
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
@@ -83,8 +55,8 @@
                     "startLine": 6,
                     "startColumn": 4,
                     "startOffset": 273,
-                    "endColumn": 52,
-                    "endOffset": 321
+                    "endColumn": 39,
+                    "endOffset": 308
                 },
                 "from": {
                     "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
@@ -92,8 +64,8 @@
                         "startLine": 6,
                         "startColumn": 4,
                         "startOffset": 273,
-                        "endColumn": 52,
-                        "endOffset": 321
+                        "endColumn": 39,
+                        "endOffset": 308
                     }
                 }
             },
@@ -101,42 +73,38 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 326,
-                    "endLine": 13,
-                    "endColumn": 12,
-                    "endOffset": 630
+                    "startOffset": 313,
+                    "endColumn": 52,
+                    "endOffset": 361
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 326,
-                        "endLine": 13,
-                        "endColumn": 12,
-                        "endOffset": 630
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 635,
-                    "endLine": 16,
+                    "startOffset": 366,
+                    "endLine": 10,
                     "endColumn": 12,
-                    "endOffset": 790
+                    "endOffset": 462
                 },
                 "from": {
-                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 635,
-                        "endLine": 16,
-                        "endColumn": 12,
-                        "endOffset": 790
-                    }
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 467,
+                    "endLine": 13,
+                    "endColumn": 12,
+                    "endOffset": 534
+                },
+                "from": {
+                    "file": "F:\\work\\apps\\apps\\andlib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml"
                 }
             }
         ]

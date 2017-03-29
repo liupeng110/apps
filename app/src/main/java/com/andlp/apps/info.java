@@ -9,7 +9,7 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 /**  717219917@qq.com  2017/3/1 15:35 */
-public class plan {
+public class info {
     //7niu 分类()
 
     //模块划分
@@ -76,5 +76,7 @@ public class plan {
 //        });
 //    }
 
+    //抽出down模块  复用
+    //
 
 }

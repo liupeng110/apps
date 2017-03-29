@@ -10,8 +10,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.andlp.apps.activity.Activity_Main">
 
+    <ListView
+        android:id="@+id/main_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
     <TextView
+        android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Hello World!"
+        android:visibility="gone"
+        />
+
 </RelativeLayout>
