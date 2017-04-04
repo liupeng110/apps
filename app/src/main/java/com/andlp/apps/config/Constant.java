@@ -17,6 +17,9 @@ public class Constant {
     public static String jj = Server+"jj.txt"+now;//精简
     public static String ci = Server+"ci.txt"+now;//创意
     public static String cy = Server+"cy.txt"+now;//常用
+    //下载路径,需要维护一个 下载列表
+    public static String path_down=SDcard+"/andlp/down/app/";
+    
 
 
 }

@@ -13,6 +13,10 @@ import com.andlib.lp.util.L;
 import com.andlp.apps.R;
 import com.andlp.apps.bean.MyFile;
 
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
 import java.util.List;
 
 /**
@@ -64,6 +68,20 @@ public class Activity_Main__adapter extends BaseAdapter{
         // 绑定处理数据
         holder.text.setText(mMyFile.getAppName());
         holder.txt_ms.setText(mMyFile.getMs());
+
+        final Button down = holder.btn;
+        down.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View view) {
+                RequestParams params= new RequestParams();
+//                 x.http().get(params,  {
+//                 });
+
+
+            }
+        });
+
+
+
         return convertView;
     }
 
@@ -72,6 +90,13 @@ public class Activity_Main__adapter extends BaseAdapter{
         TextView txt_ms;
         ImageView icon;
          Button btn;
+    }
+
+
+
+    private void down(){
+
+
     }
 
 }

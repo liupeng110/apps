@@ -19,7 +19,7 @@ public class MyApp extends AndApp {
 
     //获取sdcard状态
   private void initSDcard(){
-      SDcard= Environment.getExternalStorageDirectory()+"/andlp/down/";
+      SDcard= Environment.getExternalStorageDirectory()+"";
   }
 
 
