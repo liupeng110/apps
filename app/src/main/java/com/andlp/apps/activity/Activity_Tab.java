@@ -78,7 +78,7 @@ public class Activity_Tab extends Activity_Base {
             @Override
             public void onPageScrollStateChanged(int state) { }
 		});
- 
+
 		    int size=textViews.size();
 			for (int curr=0;curr<size;curr++)
 			{
