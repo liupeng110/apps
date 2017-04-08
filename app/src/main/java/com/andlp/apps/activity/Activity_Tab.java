@@ -78,30 +78,7 @@ public class Activity_Tab extends Activity_Base {
             @Override
             public void onPageScrollStateChanged(int state) { }
 		});
-
-		tab_app.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				viewPager.setCurrentItem(0);
-			}
-		});
-		tab_game.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				viewPager.setCurrentItem(1);
-
-			}
-		});
-		tab_ceshi.setOnClickListener(new OnClickListener() {// ����
-
-					@Override
-					public void onClick(View arg0) {
-						viewPager.setCurrentItem(2);
-
-					}
-				});
+ 
 		    int size=textViews.size();
 			for (int curr=0;curr<size;curr++)
 			{
