@@ -108,7 +108,7 @@ public class Activity_Main extends Activity_Base {
                         L.i(tag+i+",line2:" + listArray2[2]);
 
                         MyFile myFile = new MyFile();
-                        myFile.setName(listArray2[0]);
+                        myFile.setName(listArray2[0]+".apk?v=23333");
                         myFile.setAppName(listArray2[1]);
                         myFile.setMs(listArray2[2]);
                         mList.add(myFile);
