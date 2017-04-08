@@ -1,7 +1,7 @@
 package com.andlp.apps.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import org.xutils.x;
 
 /**
- * 717219917@qq.com  2017/3/1 16:13
+ * 717219917@qq.com
+ * 2016/12/13  23:29
  */
 public class Fragment_Base extends Fragment {
     private boolean injected = false;
-    String tag ="Fragment_Base";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,5 +28,4 @@ public class Fragment_Base extends Fragment {
             x.view().inject(this, this.getView());
         }
     }
-
 }
