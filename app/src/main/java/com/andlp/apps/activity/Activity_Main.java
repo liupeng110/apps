@@ -37,13 +37,12 @@ public class Activity_Main extends Activity_Base {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext=this;
-
-
+        initView();
     }
 
     @Override protected void onResume() {
         super.onResume();
-        initView();
+
     }
 
     //1.
