@@ -1,7 +1,9 @@
 package com.andlp.apps.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import com.andlp.apps.config.Constant;
 
 import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -133,6 +136,9 @@ public class Activity_Main extends Activity_Base {
         });
     }
 
-
+    @Event(R.id.test) private void test(View view){
+      Intent intent = new Intent(this,Activity_Tab.class);
+        startActivity(intent);
+    }
 
 }
