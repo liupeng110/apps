@@ -12,11 +12,14 @@ import android.widget.TextView;
 import com.andlib.lp.util.L;
 import com.andlp.apps.R;
 import com.andlp.apps.bean.MyFile;
+import com.andlp.apps.config.Constant;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
+import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -54,11 +57,7 @@ public class Activity_Main__adapter extends BaseAdapter{
         ViewHolder holder;
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.activity_main_item,parent, false);
-            holder = new ViewHolder();
-            holder.txt_ms = (TextView) convertView.findViewById(R.id.txt_ms);
-            holder.text = (TextView) convertView.findViewById(R.id.txt);
-            holder.icon = (ImageView) convertView.findViewById(R.id.img);
-            holder.btn = (Button) convertView.findViewById(R.id.btn);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -72,30 +71,36 @@ public class Activity_Main__adapter extends BaseAdapter{
         final Button down = holder.btn;
         down.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
-                RequestParams params= new RequestParams();
-//                 x.http().get(params,  {
-//                 });
-
-
+                RequestParams params= new RequestParams(Constant.Server+mMyFile.getName());
+                params.setSaveFilePath(Constant.path_down+mMyFile.getName());
+                down(params,down);
             }
         });
-
-
-
         return convertView;
     }
 
     static class ViewHolder {
-        TextView text;
-        TextView txt_ms;
-        ImageView icon;
-         Button btn;
+       ViewHolder(View view){ x.view().inject(this,view); }//构造函数中注解view
+        @ViewInject(R.id.txt) TextView text;
+        @ViewInject(R.id.txt_ms)  TextView txt_ms;
+        @ViewInject(R.id.img) ImageView icon;
+        @ViewInject(R.id.btn)  Button btn;
     }
 
 
-
-    private void down(){
-
+    //执行下载操作
+    private void down(RequestParams params,final Button btn){
+            x.http().get(params, new Callback.ProgressCallback<File>() {
+                @Override public void onStarted() { btn.setText("started");   }
+                @Override public void onSuccess(File file) { btn.setText("succ"); }
+                @Override public void onLoading(long all, long curr, boolean b) {
+                    btn.setText((int)(curr/all)*100+"%");
+                }
+                @Override public void onError(Throwable throwable, boolean b) {  btn.setText("err");  }
+                @Override public void onCancelled(CancelledException e) {  btn.setText("cancel");  }
+                @Override public void onFinished() {  }
+                @Override public void onWaiting() { }
+            });
 
     }
 
