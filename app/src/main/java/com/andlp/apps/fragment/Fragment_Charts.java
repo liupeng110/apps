@@ -1,6 +1,8 @@
 package com.andlp.apps.fragment;
 
-import com.lp.ttpod.R;
+
+
+import com.andlp.apps.R;
 
 import org.xutils.view.annotation.ContentView;
 
