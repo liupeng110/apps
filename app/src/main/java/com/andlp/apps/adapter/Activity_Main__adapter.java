@@ -16,10 +16,13 @@ import com.andlp.apps.config.Constant;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
+import org.xutils.http.app.RedirectHandler;
+import org.xutils.http.request.UriRequest;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.io.File;
+import java.text.NumberFormat;
 import java.util.List;
 
 /**
@@ -72,7 +75,8 @@ public class Activity_Main__adapter extends BaseAdapter{
         down.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 RequestParams params= new RequestParams(Constant.Server+mMyFile.getName());
-                params.setSaveFilePath(Constant.path_down+mMyFile.getName());
+                String path = Constant.path_down+mMyFile.getName().replace("?v=23333","");
+                params.setSaveFilePath(path);
                 down(params,down);
             }
         });
@@ -90,18 +94,29 @@ public class Activity_Main__adapter extends BaseAdapter{
 
     //执行下载操作
     private void down(RequestParams params,final Button btn){
+        myRedirectHandler redirectHandler = new myRedirectHandler();
+        params.setRedirectHandler(redirectHandler);
+        params.setMaxRetryCount(50);//失败重试
             x.http().get(params, new Callback.ProgressCallback<File>() {
                 @Override public void onStarted() { btn.setText("started");   }
                 @Override public void onSuccess(File file) { btn.setText("succ"); }
                 @Override public void onLoading(long all, long curr, boolean b) {
-                    btn.setText((int)(curr/all)*100+"%");
+                    NumberFormat nt = NumberFormat.getPercentInstance();
+                    nt.setMinimumFractionDigits(0);//设置百分数精确度2即保留两位小数
+                    btn.setText(nt.format((float)curr/all));
                 }
                 @Override public void onError(Throwable throwable, boolean b) {  btn.setText("err");  }
                 @Override public void onCancelled(CancelledException e) {  btn.setText("cancel");  }
                 @Override public void onFinished() {  }
                 @Override public void onWaiting() { }
             });
-
     }
+
+
+    private class myRedirectHandler implements RedirectHandler {
+        @Override public RequestParams getRedirectParams(UriRequest uriRequest) {
+            return uriRequest.getParams();
+        }
+    }//设置重定向
 
 }
