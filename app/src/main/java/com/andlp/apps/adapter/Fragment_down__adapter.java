@@ -28,13 +28,13 @@ import java.util.List;
 /**
  * Created by Administrator on 2017/3/21.
  */
-public class Activity_Main__adapter extends BaseAdapter{
+public class Fragment_down__adapter extends BaseAdapter{
     List<MyFile> mList;
     Context mContext;
 
-    public Activity_Main__adapter() { }
+    public Fragment_down__adapter() { }
 
-    public Activity_Main__adapter(Context context, List<MyFile>list){
+    public Fragment_down__adapter(Context context, List<MyFile>list){
         L.i("适配器 构造函数:" +list.size());
         mContext=context;
         mList =list;

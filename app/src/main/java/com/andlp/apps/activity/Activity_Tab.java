@@ -13,8 +13,9 @@ import android.widget.TextView;
 
 import com.andlib.lp.util.L;
 import com.andlp.apps.R;
+import com.andlp.apps.fragment.Fragment_Ceshi;
 import com.andlp.apps.fragment.Fragment_Charts;
-import com.andlp.apps.fragment.Fragment_My;
+import com.andlp.apps.fragment.Fragment_Down;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
 import org.xutils.view.annotation.ContentView;
@@ -42,9 +43,9 @@ public class Activity_Tab extends Activity_Base {
 		 ViewPropertyAnimator.animate(tab_app).scaleX(1.0f).setDuration(0);
 
 		fragments = new ArrayList<>();
-		fragments.add(new Fragment_My());
+		fragments.add(new Fragment_Down());
 		fragments.add(new Fragment_Charts());
-		fragments.add(new Fragment_Charts());
+		fragments.add(new Fragment_Ceshi());
 
 		textViews = new ArrayList<>();
 		textViews.add(tab_app);

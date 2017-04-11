@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.andlib.lp.util.L;
 import com.andlib.lp.util.SPUtil;
 import com.andlp.apps.R;
-import com.andlp.apps.adapter.Activity_Main__adapter;
+import com.andlp.apps.adapter.Fragment_down__adapter;
 import com.andlp.apps.bean.MyFile;
 import com.andlp.apps.config.Constant;
 
@@ -30,7 +30,7 @@ public class Activity_Main extends Activity_Base {
     @ViewInject(R.id.test)TextView  text;
     @ViewInject(R.id.main_listview) ListView listView;
 
-    Activity_Main__adapter mMain_adapter;
+    Fragment_down__adapter mMain_adapter;
     List<MyFile>mList=new ArrayList<>();
     Context mContext;
 
@@ -120,7 +120,7 @@ public class Activity_Main extends Activity_Base {
                         @Override
                         public void run() {
 //                            text.setText(result);
-                            mMain_adapter = new Activity_Main__adapter(mContext,mList);
+                            mMain_adapter = new Fragment_down__adapter(mContext,mList);
                             listView.setAdapter(mMain_adapter);
                             mMain_adapter.notifyDataSetChanged();// listView.onRefreshComplete();
 
@@ -136,7 +136,7 @@ public class Activity_Main extends Activity_Base {
     }
 
     @Event(R.id.test) private void test(View view){
-      Intent intent = new Intent(this,Activity_Tab.class);
+        Intent intent = new Intent(this,Activity_Tab.class);
         startActivity(intent);
     }
 

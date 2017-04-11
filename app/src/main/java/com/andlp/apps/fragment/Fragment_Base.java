@@ -14,6 +14,7 @@ import org.xutils.x;
  */
 public class Fragment_Base extends Fragment {
     private boolean injected = false;
+    String tag = "Fragment_Base";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

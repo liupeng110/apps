@@ -1,7 +1,6 @@
 package com.andlp.apps.fragment;
 
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,11 +21,11 @@ import org.xutils.x;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 717219917@qq.com  2016/12/14 0:15 */
-@ContentView( R.layout.fragment_charts)
-public class Fragment_Charts extends Fragment_Base{
-    @ViewInject(R.id.fragment_charts_listview)
-    ListView listView;
+/** 717219917@qq.com  2016/12/14 0:18 */
+@ContentView( R.layout.fragment_down)//我的
+public class Fragment_Down extends Fragment_Base {
+
+    @ViewInject(R.id.fragment_my_listview) ListView listView;
 
     Fragment_down__adapter mMain_adapter;
     List<MyFile> mList=new ArrayList<>();
@@ -81,4 +80,7 @@ public class Fragment_Charts extends Fragment_Base{
             }
         });
     }
+
+
+
 }

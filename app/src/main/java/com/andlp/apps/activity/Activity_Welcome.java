@@ -71,7 +71,7 @@ public class Activity_Welcome extends Activity_Base {
     private void toMain(){
         x.task().postDelayed(new Runnable() {
             @Override public void run() {
-                Intent intent  = new Intent(Activity_Welcome.this,Activity_Main.class);
+                Intent intent  = new Intent(Activity_Welcome.this,Activity_Tab.class);
                 startActivity(intent);
                 Activity_Welcome.this.finish();
             }

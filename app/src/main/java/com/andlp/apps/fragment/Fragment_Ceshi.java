@@ -23,10 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** 717219917@qq.com  2016/12/14 0:15 */
-@ContentView( R.layout.fragment_charts)
-public class Fragment_Charts extends Fragment_Base{
-    @ViewInject(R.id.fragment_charts_listview)
-    ListView listView;
+@ContentView( R.layout.fragment_ceshi)
+public class Fragment_Ceshi extends Fragment_Base{
+    @ViewInject(R.id.fragment_ceshi_listview) ListView listView;
 
     Fragment_down__adapter mMain_adapter;
     List<MyFile> mList=new ArrayList<>();
@@ -81,4 +80,7 @@ public class Fragment_Charts extends Fragment_Base{
             }
         });
     }
+
+
+
 }

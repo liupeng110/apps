@@ -6,19 +6,10 @@
     android:orientation="vertical" >
 
     <ListView
-        android:id="@+id/fragment_charts_listview"
+        android:id="@+id/fragment_ceshi_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:scrollbars="none"
-        />
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="游戏"
-        android:textColor="#ffffff"
-        android:textSize="25dp"
         />
 
 </LinearLayout>
